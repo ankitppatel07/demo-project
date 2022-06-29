@@ -1,9 +1,5 @@
 pipeline {
-	agent {
-		node {
-			label 'Linux'
-		}
-	}
+	agent any
 
 	stages {
 		stage ('Demo Stage') {
