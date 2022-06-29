@@ -7,7 +7,8 @@ pipeline {
 
 	stages {
 		stage ('Demo Stage') {
-			checkout([
+			steps{
+				checkout([
 					$class: 'GitSCM',
 					branches: [[name: 'origin/master'], [name: 'origin/DEVA']],
 					userRemoteConfigs: [[
@@ -15,6 +16,7 @@ pipeline {
 						credentialsId: ''
 					]]
 				])
+			}
 		}
 	}
 }
